@@ -1,0 +1,22 @@
+{
+  "people": [
+    {
+      "basic": {
+        "id": "aaa:bbb:person-1",
+        "name": "person-1"
+      }
+    },
+    {
+      "basic": {
+        "id": "aaa:bbb:person-2",
+        "name": "person-2"
+      }
+    },
+    {
+      "basic": {
+        "id": "aaa:ccc:person-3",
+        "name": "person-2"
+      }
+    }
+  ]
+}
