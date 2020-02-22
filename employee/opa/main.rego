@@ -11,10 +11,6 @@ employee_id[x] {
 }
 
 is_department_set {
-  not exist_department_missing_employee
-}
-
-exist_department_missing_employee {
-    x := input.employees[_]
-    not x.department
+  employee_without_department := {e | e := input.employees[_]; not e.department}
+  count(employee_without_department) == 0
 }

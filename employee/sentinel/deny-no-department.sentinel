@@ -1,0 +1,6 @@
+
+param employees
+
+main = rule {
+    all employees as e { keys(e) contains "department" }
+}
