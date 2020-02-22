@@ -1,7 +1,7 @@
 
 param employees
 
-main = rule { is_id_unique }
+main = rule { is_id_unique and is_department_set }
 
 is_id_unique = rule {
     is_unique(get_ids(employees))
@@ -27,4 +27,8 @@ remove_duplicates = func (list) {
         }
     }
     return unique_list
+}
+
+is_department_set = rule {
+    all employees as e { keys(e) contains "department" }
 }

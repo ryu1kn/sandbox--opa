@@ -9,3 +9,12 @@ is_id_unique {
 employee_id[x] {
   x := input.employees[_].basic.id
 }
+
+is_department_set {
+  not exist_department_missing_employee
+}
+
+exist_department_missing_employee {
+    x := input.employees[_]
+    not x.department
+}

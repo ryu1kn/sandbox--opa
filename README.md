@@ -16,14 +16,15 @@ See `Makefile` in each test theme directories.
 ### OPA
 
 * Unlike Prolog, recursion is not supported.
-* Unlike Prolog, there is function that returns a value.
+* Unlike Prolog, in addition to **rule** (**clause** in Prolog), there is **function** that returns a value.
 * Doesn't seem to be able to pass rule as an argument to a function;
-  negative impact on removing structural duplications.
+  no second-order logic support.
 
 ### Sentinel
 
 * [Sentinel language is closed-source](https://github.com/hashicorp/sentinel-sdk/issues/2)
 * [Cannot share functions/rules between policies](https://github.com/hashicorp/sentinel-sdk/issues/14)
+* More opinionated. Each policy needs to have `main` variable that evaluates to a boolean value.
 
 ### References
 
