@@ -1,14 +1,16 @@
 
 param employees
 
-main = rule { is_unique(get_ids(employees)) }
+main = rule { is_unique(map(employees, get_id)) }
 
-get_ids = func (employees) {
-    names = []
-    for employees as person {
-        append(names, person.basic.id)
-    }
-    return names
+get_id = func (employee) {
+    return employee.basic.id
+}
+
+map = func (list, fn) {
+    new_list = []
+    for list as item { append(new_list, fn(item)) }
+    return new_list
 }
 
 is_unique = func (list) {
