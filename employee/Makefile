@@ -3,10 +3,10 @@
 opa_query := 'data.rules.is_id_unique'
 
 opa-run: data/employee.json
-	opa eval $(opa_query) --data opa/rules --input $<
+	opa eval $(opa_query) --data opa --input $< --format pretty
 
 opa-debug: data/employee.json
-	opa eval $(opa_query) --data opa/rules --input $< \
+	opa eval $(opa_query) --data opa --input $< \
 		--explain notes | jq '.explanation[] | select(.Op == "Note").Message'
 
 sentinel-run: sentinel/test/employee/input.json

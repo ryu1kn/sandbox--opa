@@ -1,25 +1,25 @@
 
 param employees
 
-main = rule { is_name_unique }
+main = rule { is_id_unique }
 
-is_name_unique = rule {
-    is_unique(employee_name(employees))
+is_id_unique = rule {
+    is_unique(get_ids(employees))
 }
 
-employee_name = func (employees) {
+get_ids = func (employees) {
     names = []
     for employees as person {
-        append(names, person.basic.name)
+        append(names, person.basic.id)
     }
     return names
 }
 
 is_unique = func (list) {
-    return length(deduplicate(list)) == length(list)
+    return length(remove_duplicates(list)) == length(list)
 }
 
-deduplicate = func (list) {
+remove_duplicates = func (list) {
     unique_list = []
     for list as item {
         if unique_list not contains item {
