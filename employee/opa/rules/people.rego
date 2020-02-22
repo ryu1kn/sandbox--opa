@@ -9,7 +9,7 @@ is_id_unique {
 }
 
 person_id[x] {
-  x := input.people[_].basic.id
+  x := input.employee[_].basic.id
 }
 
 is_name_unique {
@@ -19,9 +19,9 @@ is_name_unique {
 }
 
 person_name[x] {
-  x := input.people[_].basic.name
+  x := input.employee[_].basic.name
 }
 
 namespace[x] {
-  x := dropLast(input.people[_].basic.id, ":")
+  x := dropLast(input.employee[_].basic.id, ":")
 }

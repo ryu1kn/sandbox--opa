@@ -1,0 +1,30 @@
+
+param employees
+
+main = rule { is_name_unique }
+
+is_name_unique = rule {
+    is_unique(employee_name(employees))
+}
+
+employee_name = func (employees) {
+    names = []
+    for employees as person {
+        append(names, person.basic.name)
+    }
+    return names
+}
+
+is_unique = func (list) {
+    return length(deduplicate(list)) == length(list)
+}
+
+deduplicate = func (list) {
+    unique_list = []
+    for list as item {
+        if unique_list not contains item {
+            append(unique_list, item)
+        }
+    }
+    return unique_list
+}
