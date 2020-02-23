@@ -44,7 +44,6 @@ See `Makefile` in each test theme directories.
     }
     ```
 
-
 * Supports lambda expression
 
     ```sentinel
@@ -53,5 +52,5 @@ See `Makefile` in each test theme directories.
 
 ### References
 
-* [Policy Language](https://www.openpolicyagent.org/docs/latest/policy-language/#comprehensions)
-* [Policy Reference](https://www.openpolicyagent.org/docs/latest/policy-reference)
+* [Open Policy Agent Core Docs](https://www.openpolicyagent.org/docs/latest/)
+* [Sentinel Documentation](https://docs.hashicorp.com/sentinel/)
