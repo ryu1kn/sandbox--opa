@@ -44,6 +44,13 @@ See `Makefile` in each test theme directories.
     }
     ```
 
+
+* Supports lambda expression
+
+    ```sentinel
+    map([1,2,3], func (n) { return n + 2 }) == [3,4,5]
+    ```
+
 ### References
 
 * [Policy Language](https://www.openpolicyagent.org/docs/latest/policy-language/#comprehensions)
